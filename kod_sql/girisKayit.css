@@ -1,0 +1,38 @@
+
+.radio_btn{
+    align-items:center;
+    justify-content: center;
+    display: flex;/* yazıların ortada olması*/
+}
+hr{
+    width: 100%;
+    border: 1px solid gray;
+}
+.Giris{
+    display: block;
+}
+
+.GirisText,.KayitText{
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.Kayit{
+    display: none;
+}
+
+.KayitText{
+    border: 2px solid green;
+}
+.GirisText{
+    border: 2px solid red ;
+}
+.mesaj{
+    text-align: center;
+}
+
+#sbmt{
+    width: 90%;
+}

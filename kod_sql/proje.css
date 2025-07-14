@@ -1,0 +1,192 @@
+:root {
+    --bg-color: rgb(250, 231, 234);
+    --border-color: rgb(250, 231, 234);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(165, 221, 183);
+}
+
+header{
+    background-color: var(--bg-color);
+    position: fixed;
+    width:100%;
+    top: 0;
+    height: 60px;
+    z-index:1000;  /*ustte kalması için*/
+}
+header nav{
+    border-bottom: 1px solid var(--border-color);
+    padding:0.5rem;
+    background-color: rgb(250, 231, 234);
+}
+header nav h2{
+    letter-spacing: 3px;
+    font-size: 30px;
+    font-family: 'Brush Script MT', cursive;
+    color:palevioletred;
+    text-align: center;
+    margin: 0;
+    line-height: 40px;
+}
+
+.ustMenu {
+    margin-top: 60px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.ustMenu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex: 1;
+}
+.ustMenu li{
+    flex: 1;
+    border: 2px solid green;
+    margin: 1px;
+    position: relative;
+}
+.ustMenu a{
+    text-decoration: none;
+    color:black;
+    background-color: white;
+    padding: 10px 5px;
+	font-weight:500;
+	display:block;
+	text-align:center;
+}
+.ustMenu li a:hover{
+	background-color: rgb(204, 232, 251);
+	color:rgb(19, 19, 249);
+}
+.ustMenu ul li form{
+    flex: 2;
+    display: flex;
+    align-items: center; 
+}
+.ustMenu ul li ul{
+	display:none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid green;
+    z-index: 1000;
+    width: 100%;
+}
+.ustMenu ul li ul li {
+    border-bottom: 1px solid green;
+    margin: 0; /* Boşlukları kaldırıyoruz */
+    padding: 5px; /* Yatayda iç boşluk */
+    text-align: left;
+}
+.ustMenu ul li ul li:last-child {
+    border-bottom: none; /* Son elemanın altında çizgi olmaması için */
+}
+.ustMenu ul li ul li a {
+    display: block;
+    padding: 10px ;
+    color: black;
+    text-decoration: none;
+}
+.ustMenu ul li ul li a:hover  {
+    background-color: rgb(204, 232, 251);
+    color: rgb(19, 19, 249);
+    border: 1px solid green;
+}
+
+.ustMenu ul li:hover ul{  /*li nin üstüne gidince ul görünür*/
+	display:block;
+}
+
+.search-container{
+    flex: 2;
+    border: none;
+}
+.search{
+    width: 100%;
+    padding: 10px 35px;
+    font-size: 16px;
+    font-family: inherit;
+    border: 1px solid green;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: url('search-icon.png') no-repeat 10px center white; /* İkon ekleme */
+    background-size: 20px 20px;
+}
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.books{
+    width: 270px;
+    margin: 1rem;
+    background-color: aliceblue;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.books img{
+    width: 100%;
+}
+.book_info{
+    color: #79b8f3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+.book_info span{
+    background-color: #cde0f2;
+    padding: 0.25px;
+    border-radius: 1rem ;
+    font-size: 90%;
+    font-weight: bold;  
+}
+
+.book_info span.green{
+    color:rgb(33, 134, 33);
+}
+
+.book_info span.orange{
+    color:orange;
+}
+
+.book_info span.red{
+    color:red
+}
+
+.overview {
+    background-color: rgb(204, 232, 251);
+    color: #111;
+    padding: 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);
+    overflow-y: auto;
+    transition: transform 0.5s ease-in;
+}
+
+.books:hover .overview{
+    transform: translateY(0);
+}
+.overview h3{
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #79b8f3 ;
+    width: 50%;
+}
+
